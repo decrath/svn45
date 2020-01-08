@@ -1,0 +1,31 @@
+*{
+  background-color:  linear-gradient(to bottom, #d9a7c7, #fffcdc);
+}
+
+.form{
+  margin-top: 10px;
+  min-width: 10px;
+  max-width: 500px;
+}
+
+.ancho{
+  width: 100%;
+  margin-top: 20px;
+}
+
+button{
+  background-color: #3498db ;
+  border-radius: 15px;
+  width: 200px;
+  text-align: center;
+  margin-left: 20px;
+}
+
+.mat-dialog-container{
+  border-radius: 25px;
+  background-color: #358ec9;
+}
+.botones{
+  margin-top: 30px;
+}
+

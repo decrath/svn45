@@ -1,0 +1,27 @@
+<div class="jumbotron" style="background-color: unset; height:calc(95vh);">
+    <div class="hero-body">
+    <mat-table [dataSource] = "this.roles" class = "mat-elevation-z8" >
+    
+      <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef>id</mat-header-cell>
+        <mat-cell *matCellDef = "let element">{{element.id}} </mat-cell>
+      </ng-container>
+    
+      <ng-container matColumnDef="codigo">
+        <mat-header-cell *matHeaderCellDef>codigo</mat-header-cell>
+        <mat-cell *matCellDef = "let element">{{element.codigo}} </mat-cell>
+      </ng-container>
+    
+      <ng-container matColumnDef="nombre">
+        <mat-header-cell *matHeaderCellDef>nombre</mat-header-cell>
+        <mat-cell *matCellDef = "let element">{{element.nombre}} </mat-cell>
+      </ng-container>
+    
+      <mat-header-row *matHeaderRowDef = "displayedColumnsRol">
+    
+      </mat-header-row>
+      <mat-row *matRowDef = "let row; columns:displayedColumnsRol"></mat-row>
+    </mat-table>
+    </div>
+    </div>
+

@@ -1,0 +1,29 @@
+<form class='form' [formGroup]="modifica">
+
+  <mat-form-field class="ancho">
+    <input matInput placeholder = "Id: " formControlName = "id"/>
+  </mat-form-field>
+
+  <mat-form-field class="ancho">
+    <input matInput placeholder = "Código:" formControlName = "codigo"/>
+  </mat-form-field>
+
+  <mat-form-field class="ancho">
+    <input matInput placeholder = "Descripción:" formControlName = "descripcion"/>
+  </mat-form-field>
+
+  <mat-form-field class="ancho">
+    <mat-label>Borrable</mat-label>
+    <mat-select formControlName = "borrable">
+      <mat-option *ngFor = "let opcion of opciones" [value] = "opcion">
+        {{opcion}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+</form>
+
+<div class="botones">
+  <button mat-button (click)="cancelar()">Cancelar</button>
+  <button mat-button (click)="guardar()">Guardar</button>
+</div>

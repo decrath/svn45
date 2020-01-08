@@ -1,0 +1,33 @@
+  
+  <h1>Datos de usuario</h1>
+
+<form class="form" [formGroup]="modificar">
+
+  <mat-form-field class = "ancho">
+    <input matInput placeholder = "Id usuario: " formControlName = "id" />
+  </mat-form-field>
+
+  <mat-form-field class="ancho">
+    <input matInput placeholder = "Nombre usuario:" formControlName = "username" />
+  </mat-form-field>
+
+  <mat-form-field class = "ancho">
+    <mat-label>Activo </mat-label>
+    <mat-select   formControlName = "activo">
+      <mat-option *ngFor = "let opcion of opciones" [value] = "opcion">
+          {{ opcion }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field class = "ancho">
+    <input matInput placeholder = "Nombre Completo" formControlName = "nombreCompleto" />
+  </mat-form-field>
+
+</form>
+
+<div>
+  <button mat-button (click) = "cerrarDialogo()">Cancelar</button>
+  <button mat-button (click) = "guardar()" cdkfocusinitial>Guardar</button>
+</div>
+

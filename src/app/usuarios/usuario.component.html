@@ -1,0 +1,50 @@
+<div class="jumbotron" style="background-color:unset; height:calc(95vh);">
+  <div class="hero-body">
+    <mat-table #usuariosTable [dataSource]="this.usuarios" class="mat-elevation-z8" >
+
+      <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef> ID usuario</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.id}} </mat-cell>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="nombreUsuario">
+        <mat-header-cell *matHeaderCellDef> Nombre de usuario</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.username}} </mat-cell>
+      </ng-container>
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="activo">
+        <mat-header-cell *matHeaderCellDef> Activo</mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          <mat-icon class="done"  *ngIf = " element.activo" > done </mat-icon>
+          <mat-icon class="block" *ngIf = "!element.activo" > block </mat-icon>
+        </mat-cell>
+
+      </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="nombreCompleto">
+        <mat-header-cell *matHeaderCellDef> Nombre Completo</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.nombreCompleto}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="opciones">
+        <mat-header-cell *matHeaderCellDef> Opciones</mat-header-cell>
+        <mat-cell *matCellDef="let element">
+                <button mat-button (click) = "modificarUsuario(element)"> <mat-icon > update </mat-icon> </button>
+                <button mat-button (click) = "eliminarUsuario(element)"> <mat-icon > delete_outline </mat-icon> </button>
+        </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="visualizacionDeColumnas"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: visualizacionDeColumnas;" ></mat-row>
+
+    </mat-table>
+
+    <div class = "Agregacion">
+      <button mat-fab color="primary" (click) = "agregarUsuario()"> + </button>
+    </div>
+
+  </div>
+</div>

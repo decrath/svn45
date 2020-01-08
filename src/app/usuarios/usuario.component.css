@@ -1,0 +1,24 @@
+
+.Agregacion button{
+  font-size: 35px;
+  margin-top: 20px;
+  background-color: #3498db;
+  text-align: center;
+}
+
+*, ::after, ::before {
+  box-sizing: border-box;
+  text-align: right;
+
+}
+
+.botones {
+  background-color: rgb(60, 149, 207);
+  border-radius: 15px;
+  margin-left: 3px;
+  margin-bottom: 10px;
+}
+
+.done{
+  color: green;
+}

@@ -1,0 +1,15 @@
+.agregar button{
+  font-size: 25px;
+  margin-top: 20px;
+  background-color: #3498db;
+}
+.mat-dialog-container{
+  border-radius: 25px;
+  background-color: aqua;
+}
+
+.agregar button{
+  font-size: 40px;
+}
+
+

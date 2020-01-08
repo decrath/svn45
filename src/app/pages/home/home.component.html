@@ -1,0 +1,164 @@
+<div class="jumbotron" style="background-color: unset;">
+  <div class="hero-body">
+    <mat-table #sistemaTable [dataSource]="this.sistemas" class="mat-elevation-z8">
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="codigo">
+        <mat-header-cell *matHeaderCellDef> Código</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.codigo}} </mat-cell>
+      </ng-container>
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="descripcion">
+        <mat-header-cell *matHeaderCellDef> Descripción</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.descripcion}} </mat-cell>
+      </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="borrable">
+        <mat-header-cell *matHeaderCellDef> Borrable</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.borrable}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="opciones">
+        <mat-header-cell *matHeaderCellDef> Opciones</mat-header-cell>
+        <mat-cell *matCellDef="let element">
+              <button mat-button (click) = "modificarDatoSistema(element)"> <mat-icon  >update </mat-icon> </button>
+              <button mat-button (click) = "eliminarSistema(element)"> <mat-icon> delete_outline </mat-icon> </button>
+              <button mat-button (click) = "desplegarInformacion(element)"> <mat-icon>visibility</mat-icon> </button>
+        </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="visualizacionColumnas"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: visualizacionColumnas;"  ></mat-row>
+    </mat-table>
+
+    <div class = "agregar">
+      <button mat-fab color="primary" (click) = "agregarDato()"> + </button>
+    </div>
+
+    <!--(click)="selectSistema(row)"-->
+  </div>
+</div>
+
+
+
+
+<div class="jumbotron" style="background-color: unset;">
+  <div class="hero-body">
+
+  <mat-tab-group style ="background-color: white;">
+    
+    <!--Invocar los roles en sistemas-->
+    <mat-tab label = "Roles">
+
+      <mat-table [dataSource] = "this.roles" class = "mat-elevation-z8" >
+
+        <ng-container matColumnDef="id">
+         <mat-header-cell *matHeaderCellDef>Id</mat-header-cell>
+          <mat-cell *matCellDef = "let element">{{element.id}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="codigo">
+          <mat-header-cell *matHeaderCellDef>Codigo</mat-header-cell>
+          <mat-cell *matCellDef = "let element">{{element.codigo}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="nombre">
+          <mat-header-cell *matHeaderCellDef>Nombre</mat-header-cell>
+          <mat-cell *matCellDef = "let element">{{element.nombre}} </mat-cell>
+        </ng-container>
+
+      <mat-header-row *matHeaderRowDef = "displayedColumnsRol">
+
+      </mat-header-row>
+      <mat-row *matRowDef = "let row; columns:displayedColumnsRol"></mat-row>
+     </mat-table>
+
+    </mat-tab>
+      <!--Arbol-->
+      <mat-tab label = "Opciónes">
+        <!--<mat-tree [dataSource] = "this.sistemas">
+          <mat-tree-node> parent node</mat-tree-node>
+          <mat-tree-node>-- child node 1</mat-tree-node>
+          <mat-tree-node>-- child node 2</mat-tree-node>
+        </mat-tree>-->
+      </mat-tab>
+
+  </mat-tab-group>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!---<div class="jumbotron" style="background-color: unset;">
+  <div class="hero-body">
+
+     <mat-table [dataSource] = "this.roles" class = "mat-elevation-z8" >
+
+        <ng-container matColumnDef="id">
+         <mat-header-cell *matHeaderCellDef>Id</mat-header-cell>
+          <mat-cell *matCellDef = "let element">{{element.id}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="codigo">
+          <mat-header-cell *matHeaderCellDef>Codigo</mat-header-cell>
+          <mat-cell *matCellDef = "let element">{{element.codigo}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="nombre">
+          <mat-header-cell *matHeaderCellDef>Nombre</mat-header-cell>
+          <mat-cell *matCellDef = "let element">{{element.nombre}} </mat-cell>
+        </ng-container>
+
+      <mat-header-row *matHeaderRowDef = "displayedColumnsRol">
+
+      </mat-header-row>
+      <mat-row *matRowDef = "let row; columns:displayedColumnsRol"></mat-row>
+     </mat-table>
+  </div>
+</div>-->
+
