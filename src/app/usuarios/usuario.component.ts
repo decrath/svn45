@@ -72,8 +72,8 @@ export class UsuarioComponent implements OnInit {
       });
     dialogRef.afterClosed().subscribe(resultado => {
       if (resultado !== undefined) {
-        this.sistemaService.actualizarLosUsuarios(resultado).subscribe(result => {
-            this.responseUsuario = result;
+        this.sistemaService.actualizarLosUsuarios(resultado).subscribe(respuesta => {
+            this.responseUsuario = respuesta;
             if (this.responseUsuario.responseStatus.errorCode > 0) {
               window.alert('Error fatal\n' + JSON.stringify(this.responseUsuario.responseStatus.errores));
               console.log(JSON.stringify(this.responseUsuario.responseStatus.errores));
